@@ -168,15 +168,26 @@
         
         const q = quizQuestions[currentQuestion];
         
-        // Create question HTML
+        // Shuffle the options to randomize answer positions
+        const shuffledOptions = q.options.map((option, index) => ({
+            text: option,
+            originalIndex: index
+        }));
+        
+        // Fisher-Yates shuffle algorithm
+        for (let i = shuffledOptions.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffledOptions[i], shuffledOptions[j]] = [shuffledOptions[j], shuffledOptions[i]];
+        }
+        
+        // Create question HTML without emoji icons
         const questionHTML = `
             <div class="quiz-question">
                 <p class="question-text">Question ${currentQuestion + 1} of ${totalQuestions}: ${q.question}</p>
                 <div class="quiz-options">
-                    ${q.options.map((option, index) => `
-                        <button class="quiz-option" data-answer="${index}">
-                            <span class="option-emoji">${index === q.correctAnswer ? '✅' : index === 0 ? '❌' : '❓'}</span>
-                            <span>${option}</span>
+                    ${shuffledOptions.map((option) => `
+                        <button class="quiz-option" data-answer="${option.originalIndex}">
+                            <span>${option.text}</span>
                         </button>
                     `).join('')}
                 </div>
