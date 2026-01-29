@@ -255,7 +255,16 @@ const translations = {
         "quiz.complete.text": "!أنت تعرف كيف تكون طالباً رائعاً",
         "quiz.complete.restart": "حاول مرة أخرى",
         "footer.message": "تذكر: أنت مرحب بك هنا! كل طالب يجلب شيئاً مميزاً إلى مدرستنا. 🌟",
-        "footer.support": "إذا كنت بحاجة إلى مساعدة، اسأل دائماً معلماً أو شخصاً بالغاً آخر في المدرسة."
+        "footer.support": "إذا كنت بحاجة إلى مساعدة، اسأل دائماً معلماً أو شخصاً بالغاً آخر في المدرسة.",
+        "help.readMore": "اقرأ المزيد →",
+        "support.backButton": "العودة إلى الصفحة الرئيسية",
+        "footer.support.message": "أنت لست وحدك. المساعدة متاحة، والناس يهتمون بك. 💙",
+        "footer.backHome": "← العودة إلى الصفحة الرئيسية",
+        "support.related.title": "مواضيع ذات صلة",
+        "support.related.sadLonely": "الشعور بالحزن أو الوحدة",
+        "support.related.bullying": "التعامل مع التنمر",
+        "support.related.homesick": "الشعور بالحنين للوطن",
+        "support.related.stress": "الضغط الأكاديمي"
     }
 };
 
@@ -384,7 +393,16 @@ translations.uk = {
     "quiz.complete.text": "Ви знаєте, як бути чудовим учнем!",
     "quiz.complete.restart": "Спробуйте ще раз",
     "footer.message": "Пам'ятайте: ви тут вітається! Кожен учень приносить щось особливе в нашу школу. 🌟",
-    "footer.support": "Якщо вам потрібна допомога, завжди запитуйте вчителя або іншого дорослого в школі."
+    "footer.support": "Якщо вам потрібна допомога, завжди запитуйте вчителя або іншого дорослого в школі.",
+    "help.readMore": "Читати далі →",
+    "support.backButton": "Повернутися на головну сторінку",
+    "footer.support.message": "Ви не самотні. Допомога доступна, і люди піклуються про вас. 💙",
+    "footer.backHome": "← Повернутися додому",
+    "support.related.title": "Пов'язані теми",
+    "support.related.sadLonely": "Почуття суму або самотності",
+    "support.related.bullying": "Боротьба з залякуванням",
+    "support.related.homesick": "Нудьга за домом",
+    "support.related.stress": "Академічний стрес"
 };
 
 // Add Danish translations
@@ -510,7 +528,16 @@ translations.da = {
     "quiz.complete.text": "Du ved, hvordan man er en fantastisk elev!",
     "quiz.complete.restart": "Prøv igen",
     "footer.message": "Husk: Du er velkommen her! Hver elev bringer noget særligt til vores skole. 🌟",
-    "footer.support": "Hvis du har brug for hjælp, skal du altid spørge en lærer eller en anden voksen på skolen."
+    "footer.support": "Hvis du har brug for hjælp, skal du altid spørge en lærer eller en anden voksen på skolen.",
+    "help.readMore": "Læs mere →",
+    "support.backButton": "Tilbage til hovedsiden",
+    "footer.support.message": "Du er ikke alene. Hjælp er tilgængelig, og folk bekymrer sig om dig. 💙",
+    "footer.backHome": "← Tilbage til forsiden",
+    "support.related.title": "Relaterede emner",
+    "support.related.sadLonely": "Føler dig trist eller ensom",
+    "support.related.bullying": "Håndtering af mobning",
+    "support.related.homesick": "Savner hjemmet",
+    "support.related.stress": "Akademisk stress"
 };
 
 // Add Russian translations
@@ -636,7 +663,16 @@ translations.ru = {
     "quiz.complete.text": "Ты знаешь, как быть отличным учеником!",
     "quiz.complete.restart": "Попробуй еще раз",
     "footer.message": "Помни: тебя здесь приветствуют! Каждый ученик приносит что-то особенное в нашу школу. 🌟",
-    "footer.support": "Если тебе нужна помощь, всегда спрашивай учителя или другого взрослого в школе."
+    "footer.support": "Если тебе нужна помощь, всегда спрашивай учителя или другого взрослого в школе.",
+    "help.readMore": "Читать далее →",
+    "support.backButton": "Вернуться на главную страницу",
+    "footer.support.message": "Ты не одинок. Помощь доступна, и люди заботятся о тебе. 💙",
+    "footer.backHome": "← Вернуться домой",
+    "support.related.title": "Связанные темы",
+    "support.related.sadLonely": "Чувство грусти или одиночества",
+    "support.related.bullying": "Борьба с травлей",
+    "support.related.homesick": "Тоска по дому",
+    "support.related.stress": "Учебный стресс"
 };
 
 // Add Portuguese translations
@@ -762,7 +798,16 @@ translations.pt = {
     "quiz.complete.text": "Sabes como ser um ótimo aluno!",
     "quiz.complete.restart": "Tenta de novo",
     "footer.message": "Lembra-te: És bem-vindo aqui! Cada aluno traz algo especial para a nossa escola. 🌟",
-    "footer.support": "Se precisas de ajuda, pergunta sempre a um professor ou outro adulto na escola."
+    "footer.support": "Se precisas de ajuda, pergunta sempre a um professor ou outro adulto na escola.",
+    "help.readMore": "Ler mais →",
+    "support.backButton": "Voltar à página principal",
+    "footer.support.message": "Não estás sozinho. A ajuda está disponível e as pessoas preocupam-se contigo. 💙",
+    "footer.backHome": "← Voltar ao início",
+    "support.related.title": "Tópicos relacionados",
+    "support.related.sadLonely": "Sentir-se triste ou solitário",
+    "support.related.bullying": "Lidar com bullying",
+    "support.related.homesick": "Saudades de casa",
+    "support.related.stress": "Stress académico"
 };
 
 // Export translations
