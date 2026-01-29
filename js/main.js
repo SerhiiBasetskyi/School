@@ -169,6 +169,13 @@
             }, 2000);
         } else {
             button.classList.add('incorrect');
+            
+            // Find and highlight the correct answer
+            const correctOption = questionElement.querySelector('.quiz-option[data-correct="true"]');
+            if (correctOption) {
+                correctOption.classList.add('correct');
+            }
+            
             feedbackElement.textContent = getTranslation('quiz.feedback.incorrect') || '✗ Not quite. Try thinking about what the teacher would want you to do.';
             feedbackElement.className = 'quiz-feedback incorrect';
             
@@ -176,8 +183,11 @@
             setTimeout(() => {
                 button.classList.remove('incorrect');
                 button.disabled = false;
+                if (correctOption) {
+                    correctOption.classList.remove('correct');
+                }
                 feedbackElement.textContent = '';
-            }, 2000);
+            }, 3000);
         }
     }
 
