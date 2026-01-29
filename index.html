@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to School in Denmark - A friendly guide for new students">
+    <title data-i18n="site.title">Welcome to School in Denmark</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button class="language-button" data-lang="en">🇬🇧 English</button>
+        <button class="language-button" data-lang="ar">🇸🇾 العربية</button>
+        <button class="language-button" data-lang="uk">🇺🇦 Українська</button>
+        <button class="language-button" data-lang="da">🇩🇰 Dansk</button>
+        <button class="language-button" data-lang="ru">🇷🇺 Русский</button>
+        <button class="language-button" data-lang="pt">🇵🇹 Português</button>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-image">
+                <img src="images/school-building.svg" alt="School Building" class="hero-img">
+            </div>
+            <h1 data-i18n="hero.title">Welcome to Your New School!</h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Let's learn about school in Denmark together</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#welcome" class="nav-item">
+                <img src="images/school-building.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.welcome">Welcome</span>
+            </a>
+            <a href="#school-day" class="nav-item">
+                <img src="images/clock.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.schoolDay">School Day</span>
+            </a>
+            <a href="#written-rules" class="nav-item">
+                <img src="images/rules.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.writtenRules">School Rules</span>
+            </a>
+            <a href="#unwritten-rules" class="nav-item">
+                <img src="images/books.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.unwrittenRules">Unwritten Rules</span>
+            </a>
+            <a href="#friends" class="nav-item">
+                <img src="images/friends.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.friends">Friends</span>
+            </a>
+            <a href="#teachers" class="nav-item">
+                <img src="images/teacher.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.teachers">Teachers</span>
+            </a>
+            <a href="#help" class="nav-item">
+                <img src="images/help.svg" alt="" class="nav-icon">
+                <span data-i18n="nav.help">Need Help?</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section id="welcome" class="content-section welcome-section">
+            <div class="container">
+                <div class="section-header">
+                    <img src="images/school-building.svg" alt="" class="section-icon">
+                    <h2 data-i18n="welcome.title">Welcome to School in Denmark</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="welcome.intro">Denmark is a friendly country where everyone is welcome. Schools here want you to be happy and learn new things!</p>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <img src="images/equality.svg" alt="" class="info-icon">
+                            <h3 data-i18n="welcome.info1.title">Everyone is Equal</h3>
+                            <p data-i18n="welcome.info1.text">All students are treated the same way</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="images/handshake.svg" alt="" class="info-icon">
+                            <h3 data-i18n="welcome.info2.title">Teachers are Friendly</h3>
+                            <p data-i18n="welcome.info2.text">You can ask questions anytime</p>
+                        </div>
+                        <div class="info-item">
+                            <img src="images/diversity.svg" alt="" class="info-icon">
+                            <h3 data-i18n="welcome.info3.title">Different is Good</h3>
+                            <p data-i18n="welcome.info3.text">We celebrate different cultures</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- School Day Section -->
+        <section id="school-day" class="content-section school-day-section">
+            <div class="container">
+                <div class="section-header">
+                    <img src="images/clock.svg" alt="" class="section-icon">
+                    <h2 data-i18n="schoolDay.title">A Typical School Day</h2>
+                </div>
+                <div class="content-card">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <img src="images/school-building.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time1.title">8:00 - School Starts</h3>
+                                <p data-i18n="schoolDay.time1.text">Come to your classroom. Say good morning!</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/studying.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time2.title">8:00-10:00 - Morning Lessons</h3>
+                                <p data-i18n="schoolDay.time2.text">Math, Danish, or English class</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/friends.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time3.title">10:00-10:15 - Break</h3>
+                                <p data-i18n="schoolDay.time3.text">Eat a snack, play with friends</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/science.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time4.title">10:15-12:00 - More Lessons</h3>
+                                <p data-i18n="schoolDay.time4.text">Science, art, or other subjects</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/lunch.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time5.title">12:00-12:30 - Lunch</h3>
+                                <p data-i18n="schoolDay.time5.text">Eat lunch with your classmates</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/sports.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time6.title">12:30-13:30 - Afternoon</h3>
+                                <p data-i18n="schoolDay.time6.text">Sports, music, or group activities</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <img src="images/school-building.svg" alt="" class="timeline-icon">
+                            <div class="timeline-content">
+                                <h3 data-i18n="schoolDay.time7.title">14:00 - Go Home</h3>
+                                <p data-i18n="schoolDay.time7.text">School day is over. See you tomorrow!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Written Rules Section -->
+        <section id="written-rules" class="content-section rules-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">📋</span>
+                    <h2 data-i18n="writtenRules.title">School Rules You Should Know</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="writtenRules.intro">These are important rules that everyone follows:</p>
+                    <div class="rules-grid">
+                        <div class="rule-item">
+                            <span class="rule-emoji">⏰</span>
+                            <h3 data-i18n="writtenRules.rule1.title">Come on Time</h3>
+                            <p data-i18n="writtenRules.rule1.text">School starts at 8:00. Try not to be late!</p>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-emoji">📖</span>
+                            <h3 data-i18n="writtenRules.rule2.title">Do Your Homework</h3>
+                            <p data-i18n="writtenRules.rule2.text">Teachers give homework to help you learn. Do your best!</p>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-emoji">🤫</span>
+                            <h3 data-i18n="writtenRules.rule3.title">Listen in Class</h3>
+                            <p data-i18n="writtenRules.rule3.text">When the teacher talks, listen carefully.</p>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-emoji">🫱</span>
+                            <h3 data-i18n="writtenRules.rule4.title">Raise Your Hand</h3>
+                            <p data-i18n="writtenRules.rule4.text">When you want to speak, raise your hand first.</p>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-emoji">❤️</span>
+                            <h3 data-i18n="writtenRules.rule5.title">Be Kind</h3>
+                            <p data-i18n="writtenRules.rule5.text">Treat everyone with respect and kindness.</p>
+                        </div>
+                        <div class="rule-item">
+                            <span class="rule-emoji">📱</span>
+                            <h3 data-i18n="writtenRules.rule6.title">Phone Rules</h3>
+                            <p data-i18n="writtenRules.rule6.text">Keep your phone away during lessons.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Unwritten Rules Section -->
+        <section id="unwritten-rules" class="content-section unwritten-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">💡</span>
+                    <h2 data-i18n="unwrittenRules.title">Things People Don't Always Say</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="unwrittenRules.intro">These are things Danish children learn by watching. Now you know them too!</p>
+                    <div class="situations-grid">
+                        <div class="situation-item">
+                            <span class="situation-emoji">🧍</span>
+                            <h3 data-i18n="unwrittenRules.situation1.title">Personal Space</h3>
+                            <p data-i18n="unwrittenRules.situation1.text">Danish people like a little space between them. Stand about one arm's length away when talking.</p>
+                        </div>
+                        <div class="situation-item">
+                            <span class="situation-emoji">👥</span>
+                            <h3 data-i18n="unwrittenRules.situation2.title">Everyone is Equal</h3>
+                            <p data-i18n="unwrittenRules.situation2.text">In Denmark, teachers and students are equal. You can share your ideas!</p>
+                        </div>
+                        <div class="situation-item">
+                            <span class="situation-emoji">🙋</span>
+                            <h3 data-i18n="unwrittenRules.situation3.title">Say What You Think</h3>
+                            <p data-i18n="unwrittenRules.situation3.text">It's okay to ask "why?" or say "I don't understand."</p>
+                        </div>
+                        <div class="situation-item">
+                            <span class="situation-emoji">👀</span>
+                            <h3 data-i18n="unwrittenRules.situation4.title">Eye Contact</h3>
+                            <p data-i18n="unwrittenRules.situation4.text">Looking at someone when they talk shows you're listening.</p>
+                        </div>
+                        <div class="situation-item">
+                            <span class="situation-emoji">⏱️</span>
+                            <h3 data-i18n="unwrittenRules.situation5.title">Being on Time</h3>
+                            <p data-i18n="unwrittenRules.situation5.text">Danish people value punctuality. Being on time shows respect.</p>
+                        </div>
+                        <div class="situation-item">
+                            <span class="situation-emoji">🎒</span>
+                            <h3 data-i18n="unwrittenRules.situation6.title">Be Independent</h3>
+                            <p data-i18n="unwrittenRules.situation6.text">Try to do things yourself first, then ask for help if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Friends Section -->
+        <section id="friends" class="content-section friends-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">👫</span>
+                    <h2 data-i18n="friends.title">Making Friends</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="friends.intro">Making friends is one of the best parts of school!</p>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <span class="tip-emoji">😊</span>
+                            <h3 data-i18n="friends.tip1.title">Smile and Say Hi</h3>
+                            <p data-i18n="friends.tip1.text">A smile is the same in every language!</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-emoji">🎮</span>
+                            <h3 data-i18n="friends.tip2.title">Join Activities</h3>
+                            <p data-i18n="friends.tip2.text">Play games at break time. Join sports or clubs.</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-emoji">👂</span>
+                            <h3 data-i18n="friends.tip3.title">Be a Good Listener</h3>
+                            <p data-i18n="friends.tip3.text">Let others talk. Show interest in what they say.</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-emoji">🤗</span>
+                            <h3 data-i18n="friends.tip4.title">Help Each Other</h3>
+                            <p data-i18n="friends.tip4.text">Help your classmates when they need it.</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-emoji">🗣️</span>
+                            <h3 data-i18n="friends.tip5.title">Practice Danish</h3>
+                            <p data-i18n="friends.tip5.text">Don't be shy to try speaking Danish. Your friends will help!</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-emoji">🎉</span>
+                            <h3 data-i18n="friends.tip6.title">Share Your Culture</h3>
+                            <p data-i18n="friends.tip6.text">Tell friends about your country. They want to learn!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teachers Section -->
+        <section id="teachers" class="content-section teachers-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">👨‍🏫</span>
+                    <h2 data-i18n="teachers.title">Talking to Teachers</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="teachers.intro">Teachers are here to help you. Don't be afraid to talk to them!</p>
+                    <div class="dialogue-examples">
+                        <div class="dialogue-item">
+                            <div class="dialogue-icon">💬</div>
+                            <h3 data-i18n="teachers.dialogue1.title">When You Don't Understand</h3>
+                            <div class="dialogue-box">
+                                <p class="dialogue-student" data-i18n="teachers.dialogue1.student">"Excuse me, I don't understand. Can you explain again?"</p>
+                                <p class="dialogue-teacher" data-i18n="teachers.dialogue1.teacher">"Of course! Let me explain it differently."</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-item">
+                            <div class="dialogue-icon">💬</div>
+                            <h3 data-i18n="teachers.dialogue2.title">When You Need Help</h3>
+                            <div class="dialogue-box">
+                                <p class="dialogue-student" data-i18n="teachers.dialogue2.student">"Can you help me with this homework?"</p>
+                                <p class="dialogue-teacher" data-i18n="teachers.dialogue2.teacher">"Sure! What part is difficult for you?"</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-item">
+                            <div class="dialogue-icon">💬</div>
+                            <h3 data-i18n="teachers.dialogue3.title">When You Have a Question</h3>
+                            <div class="dialogue-box">
+                                <p class="dialogue-student" data-i18n="teachers.dialogue3.student">"Why do we learn this?"</p>
+                                <p class="dialogue-teacher" data-i18n="teachers.dialogue3.teacher">"Great question! Let me tell you..."</p>
+                            </div>
+                        </div>
+                        <div class="dialogue-item">
+                            <div class="dialogue-icon">💬</div>
+                            <h3 data-i18n="teachers.dialogue4.title">When You Disagree Politely</h3>
+                            <div class="dialogue-box">
+                                <p class="dialogue-student" data-i18n="teachers.dialogue4.student">"I think there might be another way to solve this."</p>
+                                <p class="dialogue-teacher" data-i18n="teachers.dialogue4.teacher">"Interesting! Show me your idea."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Help Section -->
+        <section id="help" class="content-section help-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">🆘</span>
+                    <h2 data-i18n="help.title">If Something Feels Wrong</h2>
+                </div>
+                <div class="content-card">
+                    <p data-i18n="help.intro">Everyone needs help sometimes. It's okay to ask!</p>
+                    <div class="help-scenarios">
+                        <div class="help-item safe">
+                            <span class="help-emoji">😟</span>
+                            <h3 data-i18n="help.scenario1.title">If You Feel Sad or Lonely</h3>
+                            <p data-i18n="help.scenario1.text">Talk to your teacher or school counselor. They can help you feel better.</p>
+                        </div>
+                        <div class="help-item safe">
+                            <span class="help-emoji">😰</span>
+                            <h3 data-i18n="help.scenario2.title">If Someone is Mean to You</h3>
+                            <p data-i18n="help.scenario2.text">Tell a teacher right away. Bullying is not allowed in Danish schools.</p>
+                        </div>
+                        <div class="help-item safe">
+                            <span class="help-emoji">😕</span>
+                            <h3 data-i18n="help.scenario3.title">If You Don't Understand the Lessons</h3>
+                            <p data-i18n="help.scenario3.text">Ask your teacher for extra help. They can explain things in a different way.</p>
+                        </div>
+                        <div class="help-item safe">
+                            <span class="help-emoji">🏠</span>
+                            <h3 data-i18n="help.scenario4.title">If You Miss Your Home</h3>
+                            <p data-i18n="help.scenario4.text">It's normal to miss home. Talk about your feelings with someone you trust.</p>
+                        </div>
+                    </div>
+                    <div class="help-contacts">
+                        <h3 data-i18n="help.contacts.title">Who Can Help?</h3>
+                        <ul>
+                            <li data-i18n="help.contacts.item1">Your classroom teacher</li>
+                            <li data-i18n="help.contacts.item2">The school counselor</li>
+                            <li data-i18n="help.contacts.item3">The school principal</li>
+                            <li data-i18n="help.contacts.item4">Your parents or guardians</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz" class="content-section quiz-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-emoji">🎯</span>
+                    <h2 data-i18n="quiz.title">Quick Quiz - What Should You Do?</h2>
+                </div>
+                <div class="content-card">
+                    <div class="quiz-container">
+                        <div class="quiz-question" data-quiz="1">
+                            <p class="question-text" data-i18n="quiz.q1.question">You don't understand the homework. What should you do?</p>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q1.option1">
+                                    <span class="option-emoji">😞</span>
+                                    <span>Don't do it and hope nobody notices</span>
+                                </button>
+                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q1.option2">
+                                    <span class="option-emoji">✅</span>
+                                    <span>Ask the teacher for help</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q1.option3">
+                                    <span class="option-emoji">😰</span>
+                                    <span>Copy from another student</span>
+                                </button>
+                            </div>
+                            <div class="quiz-feedback"></div>
+                        </div>
+
+                        <div class="quiz-question" data-quiz="2" style="display: none;">
+                            <p class="question-text" data-i18n="quiz.q2.question">A classmate is sitting alone at lunch. What should you do?</p>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q2.option1">
+                                    <span class="option-emoji">🤷</span>
+                                    <span>Ignore them</span>
+                                </button>
+                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q2.option2">
+                                    <span class="option-emoji">✅</span>
+                                    <span>Ask if they want to sit with you</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q2.option3">
+                                    <span class="option-emoji">😐</span>
+                                    <span>Wait for them to ask you</span>
+                                </button>
+                            </div>
+                            <div class="quiz-feedback"></div>
+                        </div>
+
+                        <div class="quiz-question" data-quiz="3" style="display: none;">
+                            <p class="question-text" data-i18n="quiz.q3.question">You want to say something in class. What should you do?</p>
+                            <div class="quiz-options">
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q3.option1">
+                                    <span class="option-emoji">🗣️</span>
+                                    <span>Shout it out loud</span>
+                                </button>
+                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q3.option2">
+                                    <span class="option-emoji">✅</span>
+                                    <span>Raise your hand and wait</span>
+                                </button>
+                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q3.option3">
+                                    <span class="option-emoji">🤐</span>
+                                    <span>Keep quiet and don't say anything</span>
+                                </button>
+                            </div>
+                            <div class="quiz-feedback"></div>
+                        </div>
+
+                        <div class="quiz-complete" style="display: none;">
+                            <span class="complete-emoji">🎉</span>
+                            <h3 data-i18n="quiz.complete.title">Great Job!</h3>
+                            <p data-i18n="quiz.complete.text">You know how to be a great student!</p>
+                            <button class="quiz-restart" data-i18n="quiz.complete.restart">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p data-i18n="footer.message">Remember: You are welcome here! Every student brings something special to our school. 🌟</p>
+            <p class="footer-small" data-i18n="footer.support">If you need help, always ask a teacher or another adult at school.</p>
+        </div>
+    </footer>
+
+    <script src="js/translations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

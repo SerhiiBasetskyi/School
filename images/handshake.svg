@@ -1,0 +1,7 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Handshake -->
+  <circle cx="40" cy="40" r="35" fill="#E67E22" opacity="0.2"/>
+  <path d="M 20,45 L 30,35 L 35,40 L 40,35 L 50,45 L 45,50 L 40,45 L 35,50 L 25,50 Z" fill="#E67E22"/>
+  <circle cx="25" cy="32" r="6" fill="#2E5C8A"/>
+  <circle cx="55" cy="32" r="6" fill="#8E44AD"/>
+</svg>

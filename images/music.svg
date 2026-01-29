@@ -1,0 +1,11 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Music/arts -->
+  <circle cx="100" cy="100" r="90" fill="#FCE4EC" opacity="0.3"/>
+  <circle cx="75" cy="110" r="25" fill="#FFFFFF" stroke="#E91E63" stroke-width="3"/>
+  <circle cx="125" cy="110" r="25" fill="#FFFFFF" stroke="#E91E63" stroke-width="3"/>
+  <rect x="73" y="85" width="4" height="30" fill="#E91E63"/>
+  <rect x="123" y="85" width="4" height="30" fill="#E91E63"/>
+  <circle cx="75" cy="85" r="6" fill="#E91E63"/>
+  <circle cx="125" cy="85" r="6" fill="#E91E63"/>
+  <path d="M 70,60 L 80,70 L 90,65 L 100,75 L 110,70 L 120,80 L 130,75" stroke="#E91E63" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

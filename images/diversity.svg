@@ -1,0 +1,8 @@
+<svg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+  <!-- Diversity/rainbow -->
+  <circle cx="40" cy="40" r="35" fill="#8E44AD" opacity="0.2"/>
+  <path d="M 15,50 Q 40,20 65,50" stroke="#E74C3C" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 20,50 Q 40,25 60,50" stroke="#E67E22" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 25,50 Q 40,30 55,50" stroke="#F39C12" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M 30,50 Q 40,35 50,50" stroke="#27AE60" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>

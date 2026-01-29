@@ -1,0 +1,15 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rules checklist -->
+  <rect x="40" y="40" width="120" height="140" fill="#FFFFFF" stroke="#4A90E2" stroke-width="3" rx="5"/>
+  <rect x="50" y="50" width="100" height="20" fill="#E3F2FD" rx="3"/>
+  <text x="100" y="65" font-family="Arial, sans-serif" font-size="14" fill="#2C5F8D" text-anchor="middle" font-weight="bold">RULES</text>
+  <circle cx="60" cy="90" r="8" fill="#7ED321"/>
+  <path d="M 56,90 L 59,93 L 64,85" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <line x1="75" y1="90" x2="140" y2="90" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="60" cy="115" r="8" fill="#7ED321"/>
+  <path d="M 56,115 L 59,118 L 64,110" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <line x1="75" y1="115" x2="140" y2="115" stroke="#4A90E2" stroke-width="2"/>
+  <circle cx="60" cy="140" r="8" fill="#7ED321"/>
+  <path d="M 56,140 L 59,143 L 64,135" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <line x1="75" y1="140" x2="140" y2="140" stroke="#4A90E2" stroke-width="2"/>
+</svg>
