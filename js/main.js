@@ -97,7 +97,13 @@
     // Get translation for a key
     function getTranslation(key) {
         const value = translations[currentLang]?.[key];
-        return value || key; // Return translation or key if not found
+        // Fall back to English if translation not found in current language
+        if (value) {
+            return value;
+        }
+        // Try English as fallback
+        const englishValue = translations['en']?.[key];
+        return englishValue || key; // Return English translation or key if not found
     }
 
     // Setup smooth scrolling for navigation links
