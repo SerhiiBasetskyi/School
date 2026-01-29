@@ -96,18 +96,8 @@
 
     // Get translation for a key
     function getTranslation(key) {
-        const keys = key.split('.');
-        let value = translations[currentLang];
-        
-        for (const k of keys) {
-            if (value && typeof value === 'object') {
-                value = value[k];
-            } else {
-                return key; // Return key if translation not found
-            }
-        }
-        
-        return value || key;
+        const value = translations[currentLang]?.[key];
+        return value || key; // Return translation or key if not found
     }
 
     // Setup smooth scrolling for navigation links
