@@ -65,6 +65,20 @@
     50% { transform: translateY(-10px); }
 }
 
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero-icon {
+        animation: none;
+    }
+    
+    .action-card:hover,
+    .reason-card:hover,
+    .related-card:hover,
+    .help-link:hover {
+        transform: none;
+    }
+}
+
 .support-hero h1 {
     font-size: 2.5rem;
     color: var(--primary-color);
