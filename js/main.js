@@ -8,10 +8,11 @@
     let currentLang = 'en';
     
     // Quiz state
-    let currentQuestion = 1;
-    const totalQuestions = 3;
+    let currentQuestion = 0;
+    const totalQuestions = 100;
     let questionsAsked = 0;
     let correctAnswers = 0;
+    let quizQuestions = [];
 
     // Initialize the application
     function init() {
@@ -132,18 +133,85 @@
 
     // Setup quiz functionality
     function setupQuiz() {
-        const quizOptions = document.querySelectorAll('.quiz-option');
-        const restartButton = document.querySelector('.quiz-restart');
+        // Load quiz questions from quiz-data.js
+        if (typeof quizData !== 'undefined' && quizData[currentLang]) {
+            quizQuestions = quizData[currentLang];
+        } else {
+            quizQuestions = quizData.en; // Fallback to English
+        }
         
-        // Setup option click handlers
-        quizOptions.forEach(option => {
-            option.addEventListener('click', handleQuizAnswer);
-        });
+        // Initialize quiz
+        currentQuestion = 0;
+        questionsAsked = 0;
+        correctAnswers = 0;
+        
+        // Update progress display
+        updateProgress();
+        
+        // Show first question
+        showQuestion();
         
         // Setup restart button
+        const restartButton = document.querySelector('.quiz-restart');
         if (restartButton) {
             restartButton.addEventListener('click', restartQuiz);
         }
+    }
+    
+    // Show current question
+    function showQuestion() {
+        const container = document.getElementById('quiz-question-container');
+        if (!container || currentQuestion >= quizQuestions.length) {
+            showQuizComplete();
+            return;
+        }
+        
+        const q = quizQuestions[currentQuestion];
+        
+        // Create question HTML
+        const questionHTML = `
+            <div class="quiz-question">
+                <p class="question-text">Question ${currentQuestion + 1} of ${totalQuestions}: ${q.question}</p>
+                <div class="quiz-options">
+                    ${q.options.map((option, index) => `
+                        <button class="quiz-option" data-answer="${index}">
+                            <span class="option-emoji">${index === q.correctAnswer ? '✅' : index === 0 ? '❌' : '❓'}</span>
+                            <span>${option}</span>
+                        </button>
+                    `).join('')}
+                </div>
+                <div class="quiz-feedback"></div>
+            </div>
+        `;
+        
+        container.innerHTML = questionHTML;
+        
+        // Add click handlers to options
+        const options = container.querySelectorAll('.quiz-option');
+        options.forEach(option => {
+            option.addEventListener('click', handleQuizAnswer);
+        });
+    }
+    
+    // Update progress display
+    function updateProgress() {
+        const answeredEl = document.getElementById('answered-count');
+        const correctEl = document.getElementById('correct-count');
+        const totalEl = document.getElementById('total-count');
+        const progressFill = document.getElementById('progress-fill');
+        const scorePercentage = document.getElementById('score-percentage');
+        
+        if (answeredEl) answeredEl.textContent = questionsAsked;
+        if (correctEl) correctEl.textContent = correctAnswers;
+        if (totalEl) totalEl.textContent = totalQuestions;
+        
+        // Update progress bar
+        const progress = (questionsAsked / totalQuestions) * 100;
+        if (progressFill) progressFill.style.width = `${progress}%`;
+        
+        // Update percentage
+        const percentage = questionsAsked > 0 ? Math.round((correctAnswers / questionsAsked) * 100) : 0;
+        if (scorePercentage) scorePercentage.textContent = `${percentage}%`;
     }
 
     // Handle quiz answer selection
@@ -153,7 +221,9 @@
         // Prevent double-clicks
         if (button.disabled) return;
         
-        const isCorrect = button.getAttribute('data-correct') === 'true';
+        const selectedAnswer = parseInt(button.getAttribute('data-answer'));
+        const q = quizQuestions[currentQuestion];
+        const isCorrect = selectedAnswer === q.correctAnswer;
         const questionElement = button.closest('.quiz-question');
         const feedbackElement = questionElement.querySelector('.quiz-feedback');
         const allOptions = questionElement.querySelectorAll('.quiz-option');
@@ -172,58 +242,41 @@
             button.classList.add('correct');
             feedbackElement.textContent = getTranslation('quiz.feedback.correct') || '✓ Great job! That\'s correct!';
             feedbackElement.className = 'quiz-feedback correct';
-            
-            // Move to next question after delay
-            setTimeout(() => {
-                nextQuestion();
-            }, 2000);
         } else {
             button.classList.add('incorrect');
             
             // Find and highlight the correct answer
-            const correctOption = questionElement.querySelector('.quiz-option[data-correct="true"]');
-            if (correctOption) {
-                correctOption.classList.add('correct');
-            }
+            allOptions.forEach(opt => {
+                if (parseInt(opt.getAttribute('data-answer')) === q.correctAnswer) {
+                    opt.classList.add('correct');
+                }
+            });
             
             feedbackElement.textContent = getTranslation('quiz.feedback.incorrect') || '✗ Not quite. The correct answer is highlighted.';
             feedbackElement.className = 'quiz-feedback incorrect';
-            
-            // Move to next question after showing correct answer
-            setTimeout(() => {
-                nextQuestion();
-            }, 3000);
-        }
-    }
-
-    // Move to next quiz question
-    function nextQuestion() {
-        const currentQuestionElement = document.querySelector(`.quiz-question[data-quiz="${currentQuestion}"]`);
-        currentQuestion++;
-        
-        if (currentQuestionElement) {
-            currentQuestionElement.style.display = 'none';
         }
         
-        if (currentQuestion <= totalQuestions) {
-            const nextQuestionElement = document.querySelector(`.quiz-question[data-quiz="${currentQuestion}"]`);
-            if (nextQuestionElement) {
-                nextQuestionElement.style.display = 'block';
-                
-                // Re-enable options for new question
-                const options = nextQuestionElement.querySelectorAll('.quiz-option');
-                options.forEach(opt => {
-                    opt.disabled = false;
-                    opt.classList.remove('correct', 'incorrect');
-                });
+        // Update progress
+        updateProgress();
+        
+        // Move to next question after delay
+        setTimeout(() => {
+            currentQuestion++;
+            if (currentQuestion < totalQuestions && currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showQuizComplete();
             }
-        } else {
-            showQuizComplete();
-        }
+        }, isCorrect ? 2000 : 3000);
     }
 
     // Show quiz completion message
     function showQuizComplete() {
+        const container = document.getElementById('quiz-question-container');
+        if (container) {
+            container.style.display = 'none';
+        }
+        
         const quizComplete = document.querySelector('.quiz-complete');
         if (quizComplete) {
             quizComplete.style.display = 'block';
@@ -242,7 +295,7 @@
 
     // Restart the quiz
     function restartQuiz() {
-        currentQuestion = 1;
+        currentQuestion = 0;
         questionsAsked = 0;
         correctAnswers = 0;
         
@@ -252,25 +305,15 @@
             quizComplete.style.display = 'none';
         }
         
-        // Reset all questions
-        for (let i = 1; i <= totalQuestions; i++) {
-            const questionElement = document.querySelector(`.quiz-question[data-quiz="${i}"]`);
-            if (questionElement) {
-                questionElement.style.display = i === 1 ? 'block' : 'none';
-                
-                const options = questionElement.querySelectorAll('.quiz-option');
-                options.forEach(opt => {
-                    opt.disabled = false;
-                    opt.classList.remove('correct', 'incorrect');
-                });
-                
-                const feedback = questionElement.querySelector('.quiz-feedback');
-                if (feedback) {
-                    feedback.textContent = '';
-                    feedback.className = 'quiz-feedback';
-                }
-            }
+        // Show quiz container
+        const container = document.getElementById('quiz-question-container');
+        if (container) {
+            container.style.display = 'block';
         }
+        
+        // Update progress and show first question
+        updateProgress();
+        showQuestion();
     }
 
     // Add some visual feedback for interactive elements

@@ -399,70 +399,43 @@
                     <h2 data-i18n="quiz.title">Quick Quiz - What Should You Do?</h2>
                 </div>
                 <div class="content-card">
-                    <div class="quiz-container">
-                        <div class="quiz-question" data-quiz="1">
-                            <p class="question-text" data-i18n="quiz.q1.question">You don't understand the homework. What should you do?</p>
-                            <div class="quiz-options">
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q1.option1">
-                                    <span class="option-emoji">😞</span>
-                                    <span>Don't do it and hope nobody notices</span>
-                                </button>
-                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q1.option2">
-                                    <span class="option-emoji">✅</span>
-                                    <span>Ask the teacher for help</span>
-                                </button>
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q1.option3">
-                                    <span class="option-emoji">😰</span>
-                                    <span>Copy from another student</span>
-                                </button>
+                    <div class="quiz-wrapper">
+                        <!-- Progress Panel (Right Side) -->
+                        <div class="quiz-progress-panel">
+                            <h3 data-i18n="quiz.progress.title">Progress</h3>
+                            <div class="quiz-stats-box">
+                                <div class="stat-item">
+                                    <span class="stat-label" data-i18n="quiz.progress.answered">Answered:</span>
+                                    <span class="stat-value" id="answered-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label" data-i18n="quiz.progress.correct">Correct:</span>
+                                    <span class="stat-value correct" id="correct-count">0</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-label" data-i18n="quiz.progress.total">Total:</span>
+                                    <span class="stat-value" id="total-count">100</span>
+                                </div>
                             </div>
-                            <div class="quiz-feedback"></div>
+                            <div class="quiz-progress-bar">
+                                <div class="quiz-progress-fill" id="progress-fill"></div>
+                            </div>
+                            <div class="quiz-score-percentage" id="score-percentage">0%</div>
                         </div>
 
-                        <div class="quiz-question" data-quiz="2" style="display: none;">
-                            <p class="question-text" data-i18n="quiz.q2.question">A classmate is sitting alone at lunch. What should you do?</p>
-                            <div class="quiz-options">
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q2.option1">
-                                    <span class="option-emoji">🤷</span>
-                                    <span>Ignore them</span>
-                                </button>
-                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q2.option2">
-                                    <span class="option-emoji">✅</span>
-                                    <span>Ask if they want to sit with you</span>
-                                </button>
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q2.option3">
-                                    <span class="option-emoji">😐</span>
-                                    <span>Wait for them to ask you</span>
-                                </button>
+                        <!-- Quiz Content (Left Side) -->
+                        <div class="quiz-container">
+                            <div id="quiz-question-container">
+                                <!-- Questions will be dynamically inserted here -->
                             </div>
-                            <div class="quiz-feedback"></div>
-                        </div>
 
-                        <div class="quiz-question" data-quiz="3" style="display: none;">
-                            <p class="question-text" data-i18n="quiz.q3.question">You want to say something in class. What should you do?</p>
-                            <div class="quiz-options">
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q3.option1">
-                                    <span class="option-emoji">🗣️</span>
-                                    <span>Shout it out loud</span>
-                                </button>
-                                <button class="quiz-option" data-correct="true" data-i18n="quiz.q3.option2">
-                                    <span class="option-emoji">✅</span>
-                                    <span>Raise your hand and wait</span>
-                                </button>
-                                <button class="quiz-option" data-correct="false" data-i18n="quiz.q3.option3">
-                                    <span class="option-emoji">🤐</span>
-                                    <span>Keep quiet and don't say anything</span>
-                                </button>
+                            <div class="quiz-complete" style="display: none;">
+                                <span class="complete-emoji">🎉</span>
+                                <h3 data-i18n="quiz.complete.title">Great Job!</h3>
+                                <p data-i18n="quiz.complete.text">You know how to be a great student!</p>
+                                <p class="quiz-stats"></p>
+                                <button class="quiz-restart" data-i18n="quiz.complete.restart">Try Again</button>
                             </div>
-                            <div class="quiz-feedback"></div>
-                        </div>
-
-                        <div class="quiz-complete" style="display: none;">
-                            <span class="complete-emoji">🎉</span>
-                            <h3 data-i18n="quiz.complete.title">Great Job!</h3>
-                            <p data-i18n="quiz.complete.text">You know how to be a great student!</p>
-                            <p class="quiz-stats"></p>
-                            <button class="quiz-restart" data-i18n="quiz.complete.restart">Try Again</button>
                         </div>
                     </div>
                 </div>
@@ -478,6 +451,7 @@
         </div>
     </footer>
 
+    <script src="js/quiz-data.js"></script>
     <script src="js/translations.js"></script>
     <script src="js/main.js"></script>
 </body>
