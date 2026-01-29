@@ -566,6 +566,44 @@ body[lang="ar"] {
     font-size: 1.2em;
 }
 
+/* Clickable help items */
+.help-link {
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.help-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.help-link h3,
+.help-link p {
+    color: inherit;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+}
+
+.help-link:hover .read-more {
+    color: var(--secondary-color);
+    transform: translateX(5px);
+}
+
+[dir="rtl"] .help-link:hover .read-more {
+    transform: translateX(-5px);
+}
+
 .help-contacts {
     margin-top: var(--spacing-large);
     padding: var(--spacing-medium);
