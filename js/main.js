@@ -149,6 +149,10 @@
     // Handle quiz answer selection
     function handleQuizAnswer(e) {
         const button = e.currentTarget;
+        
+        // Prevent double-clicks
+        if (button.disabled) return;
+        
         const isCorrect = button.getAttribute('data-correct') === 'true';
         const questionElement = button.closest('.quiz-question');
         const feedbackElement = questionElement.querySelector('.quiz-feedback');
@@ -224,12 +228,14 @@
         if (quizComplete) {
             quizComplete.style.display = 'block';
             
-            // Update completion message with statistics
-            const completeText = quizComplete.querySelector('p');
-            if (completeText) {
-                const statsText = getTranslation('quiz.complete.stats') || 
-                    `You answered ${correctAnswers} out of ${questionsAsked} questions correctly!`;
-                completeText.textContent = statsText.replace('{correct}', correctAnswers).replace('{total}', questionsAsked);
+            // Update statistics in dedicated element
+            const statsElement = quizComplete.querySelector('.quiz-stats');
+            if (statsElement) {
+                const statsTemplate = getTranslation('quiz.complete.stats') || 
+                    'You answered {correct} out of {total} questions correctly!';
+                statsElement.textContent = statsTemplate
+                    .replace('{correct}', correctAnswers)
+                    .replace('{total}', questionsAsked);
             }
         }
     }
