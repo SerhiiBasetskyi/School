@@ -10,6 +10,8 @@
     // Quiz state
     let currentQuestion = 1;
     const totalQuestions = 3;
+    let questionsAsked = 0;
+    let correctAnswers = 0;
 
     // Initialize the application
     function init() {
@@ -152,6 +154,9 @@
         const feedbackElement = questionElement.querySelector('.quiz-feedback');
         const allOptions = questionElement.querySelectorAll('.quiz-option');
         
+        // Increment questions asked counter
+        questionsAsked++;
+        
         // Disable all options
         allOptions.forEach(opt => {
             opt.disabled = true;
@@ -159,6 +164,7 @@
         
         // Show correct/incorrect styling
         if (isCorrect) {
+            correctAnswers++;
             button.classList.add('correct');
             feedbackElement.textContent = getTranslation('quiz.feedback.correct') || '✓ Great job! That\'s correct!';
             feedbackElement.className = 'quiz-feedback correct';
@@ -176,17 +182,12 @@
                 correctOption.classList.add('correct');
             }
             
-            feedbackElement.textContent = getTranslation('quiz.feedback.incorrect') || '✗ Not quite. Try thinking about what the teacher would want you to do.';
+            feedbackElement.textContent = getTranslation('quiz.feedback.incorrect') || '✗ Not quite. The correct answer is highlighted.';
             feedbackElement.className = 'quiz-feedback incorrect';
             
-            // Allow retry after a moment
+            // Move to next question after showing correct answer
             setTimeout(() => {
-                button.classList.remove('incorrect');
-                button.disabled = false;
-                if (correctOption) {
-                    correctOption.classList.remove('correct');
-                }
-                feedbackElement.textContent = '';
+                nextQuestion();
             }, 3000);
         }
     }
@@ -222,12 +223,22 @@
         const quizComplete = document.querySelector('.quiz-complete');
         if (quizComplete) {
             quizComplete.style.display = 'block';
+            
+            // Update completion message with statistics
+            const completeText = quizComplete.querySelector('p');
+            if (completeText) {
+                const statsText = getTranslation('quiz.complete.stats') || 
+                    `You answered ${correctAnswers} out of ${questionsAsked} questions correctly!`;
+                completeText.textContent = statsText.replace('{correct}', correctAnswers).replace('{total}', questionsAsked);
+            }
         }
     }
 
     // Restart the quiz
     function restartQuiz() {
         currentQuestion = 1;
+        questionsAsked = 0;
+        correctAnswers = 0;
         
         // Hide completion message
         const quizComplete = document.querySelector('.quiz-complete');
